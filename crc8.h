@@ -27,10 +27,11 @@
 
 extern unsigned char crc8_table[256]; /* 8-bit crc table */
 
-#define CRC8(CRC, C)  ((CRC = crc8_table[CRC ^ C]) & 0xFF)
+#define CRC8(CRC, C)  ((CRC = crc8_table[CRC ^ (C)]) & 0xFF)
 
 
 void init_crc8();
+unsigned char calc_crc8(unsigned char *buf, int len);
 
 
 #endif

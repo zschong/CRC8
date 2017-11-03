@@ -27,8 +27,8 @@
 
 int main() 
 {
-  unsigned char crc = 0;
   unsigned char c = 't';
+  unsigned char crc = 0;
 
   init_crc8();
 
@@ -45,6 +45,8 @@ int main()
   c = 't';
   CRC8(crc,c);
   printf("CRC 'test' = %X (expected 0xb9)\n", (unsigned int) crc);
+
+  printf("calc_crc8(test, 4)=%02X\n", calc_crc8((unsigned char*)"test", 4));
  
   return 0;
 }
